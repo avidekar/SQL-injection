@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>LOGIN PAGE</title>
+<meta name="CREATE USER PAGE" content="With this page, we can create new users">
+<meta author="AJAY VIDEKAR" content="PROJECT DEMO">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"> </script>
+<script>
+	$(document).ready(function(){
+    $("input").focus(function(){
+        $(this).css("background-color", "#cccccc");
+    });
+    $("input").blur(function(){
+        $(this).css("background-color", "#ffffff");
+    });
+});
+</script>
+</head>
+<body>
+<form method="POST" action="" name="createform">
+<table align="center">
+<tr>
+<td>First Name</td>
+<td><input type="text" id = "fname" name="fname"></td>
+</tr>
+<tr>
+<td>Last Name</td>
+<td><input type="text" id = "lname" name="lname"></td>
+</tr>
+<tr>
+<td>Email ID</td>
+<td><input type="text" id = "email_id" name="email_id"></td>
+</tr>
+<tr>
+<td>User Name</td>
+<td><input type="text" id = "username" name="username"></td>
+</tr>
+<tr>
+<td>password</td>
+<td><input type="password" id = "passwd" name="passwd1"></td>
+</tr>
+<td>Re-enter password</td>
+<td><input type="password" id = "passwd" name="passwd2"></td>
+</tr>
+<tr>
+<td colspan="2"><input	type="button" value = "CREATE" id = "submit" onclick="createUser()"></td>
+</tr>
+</table>
+</form>
+<script type="text/javascript">
+function createUser()
+{
+var fname = document.forms["createform"]["fname"].value;
+var lname = document.forms["createform"]["lname"].value;
+var email_id = document.forms["createform"]["email_id"].value;
+var username = document.forms["createform"]["username"].value;
+var passwd1 = document.forms["createform"]["passwd1"].value;
+var passwd2 = document.forms["createform"]["passwd2"].value;
+if (fname == null || fname == "")
+	{
+		alert("Please Enter your First Name");
+		return false;
+	}
+else if (lname == null || lname == "")
+	{
+		alert("Please Enter your Last Name");
+		return false;
+	}
+else if (email_id == null || email_id == "")
+	{
+		alert("Please Enter your E-mail ID");
+		return false;
+	}
+else if (username == null || username == "")
+	{
+		alert("Please Enter your User Name");
+		return false;
+	}
+else if (passwd1 == null || passwd1 == "")
+	{
+		alert("Please Enter your password");
+		return false;
+	}
+else if (passwd2 == null || passwd2 == "")
+	{
+		alert("Please Enter your password");
+		return false;
+	}
+else if (passwd1 != passwd2)
+	{
+		alert("Password do not match! Please Re-enter your password");
+	}	
+else
+	{
+		//code to connect db and check if user is valid or not
+		alert("USER CREATED SUCCESSFULLY");
+	}
+
+}
+</script>
+</body>
+</html>

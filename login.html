@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>LOGIN PAGE</title>
+<meta name="LOGIN PAGE" content="With this page, we can create new users">
+<meta author="AJAY VIDEKAR" content="PROJECT DEMO">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"> </script>
+<script>
+	$(document).ready(function(){
+    $("input").focus(function(){
+        $(this).css("background-color", "#cccccc");
+    });
+    $("input").blur(function(){
+        $(this).css("background-color", "#ffffff");
+    });
+});
+</script>
+</head>
+<body>
+<form method="POST" id="loginform" action="">
+<table align="center">
+<tr>
+<td>USERNAME</td>
+<td><input type="text" id = "uid" name="uid"></td>
+</tr>
+<tr>
+<td>PASSWORD</td>
+<td><input type="password" id = "pid" name="pid"></td>
+</tr>
+<tr>
+<td><input	type="button" value = "SUBMIT" id = "submit" onclick="confirmRequest()"></td>
+<td> <input type="button" value = "NEW USER" id = "newuser" onclick="pageRedirect()"></td>
+</tr>
+</table>
+</form>
+<script type="text/javascript">
+function confirmRequest()
+{
+var uname = document.forms["loginform"]["uid"].value;
+var passwd = document.forms["loginform"]["pid"].value;
+if (uname == null || uname == "")
+	{
+		alert("Please Enter your User Name");
+		return false;
+	}
+else if (passwd == null || passwd == "")
+	{
+		alert("Please Enter your Password");
+		return false;
+	}
+else
+	{
+		//code to connect db and check if user is valid or not
+		alert("LOGIN SUCCESSFUL");
+	}
+}
+function pageRedirect()
+{
+window.location.href="create_user.html";
+}
+</script>
+</body>
+</html>
